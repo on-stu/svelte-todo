@@ -4,12 +4,14 @@
 		const data = await response.json();
 		return data;
 	};
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	console.log(data);
 </script>
 
 <div>
-	{#await getRandomNumber()}
-		<h2>loading</h2>
-	{:then number}
+	{#await getRandomNumber() then number}
 		<h2>{number}</h2>
 	{/await}
 </div>
